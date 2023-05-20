@@ -43,7 +43,7 @@ class tesseract_call:
             ' ', '')  # Join And Remove Spaces => ' '
         number_only = re.findall(r'\d+', text_str)
 
-        return set_result(STATUS_SUCCESS, {'texts': text_str, 'confidences': confidence_percentage_list})
+        return set_result(STATUS_SUCCESS, {'texts': ''.join(number_only), 'confidences': confidence_percentage_list})
 
     def find_number_only(self):
         return

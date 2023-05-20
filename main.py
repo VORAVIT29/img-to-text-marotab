@@ -12,7 +12,7 @@ CORS(app)
 @app.route('/')
 def main():
     return '<center>' \
-           '<h1>Welcome To Python Server</h1>' \
+           '<h1>Welcome To Python Server Edit last 21/5/2023</h1>' \
            '<h2>Python Version (3.9)</h2>' \
            '<h3>Flask Version (2.2.2)</h3>' \
            '<p> Image To Text Easy OCR</p>' \
