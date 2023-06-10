@@ -5,6 +5,7 @@ import tesseract_call as tr
 app = Flask(__name__)
 CORS(app)
 
+
 # data = request.get_json()
 # print(data['message'])
 
@@ -13,9 +14,8 @@ CORS(app)
 def main():
     return '<center>' \
            '<h1>Welcome To Python Server Edit last 21/5/2023</h1>' \
-           '<h2>Python Version (3.9)</h2>' \
-           '<h3>Flask Version (2.2.2)</h3>' \
-           '<p> Image To Text Easy OCR</p>' \
+           '<p> Image To Text Easy OCR  Version : 1.6.3</p>' \
+           f'<p>Status :{tr.tesseract_call.result["status"]}</p>' \
            '</center>'
 
 
@@ -29,4 +29,5 @@ def img_to_text():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='localhost', port=2000)
+    # app.run(debug=True)

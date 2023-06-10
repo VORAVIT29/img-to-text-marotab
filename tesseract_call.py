@@ -29,21 +29,21 @@ class tesseract_call:
 
         # spacer = 100
         text_list = []
+        count_score = 0
         confidence_percentage_list = 0
         for detection in result:
             text = detection[1]  # text
             text_list.append(text)
             score = detection[2]  # confidence
-            confidence_percentage_list = round(score * 100, 1)  # convert to %
+            confidence_percentage_list += round(score * 100, 1)  # convert to %
+            count_score += 1
+
+        confidence_percentage_list /= count_score
 
         # Remove Image
         # os.remove("image_process.png")
 
-        text_str = ''.join(text_list).replace(
-            ' ', '')  # Join And Remove Spaces => ' '
-        number_only = re.findall(r'\d+', text_str)
+        text_str = ''.join(text_list).replace(' ', '')  # Join And Remove Spaces => ' '
+        number_only = re.findall(r'\d+', text_str)  # Find Number Only
 
         return set_result(STATUS_SUCCESS, {'texts': ''.join(number_only), 'confidences': confidence_percentage_list})
-
-    def find_number_only(self):
-        return
