@@ -13,7 +13,7 @@ CORS(app)
 @app.route('/')
 def main():
     return '<center>' \
-           '<h1>Welcome To Python Server Edit last 21/5/2023</h1>' \
+           '<h1>Welcome To Python Server Edit last 10/6/2023</h1>' \
            '<p> Image To Text Easy OCR  Version : 1.6.3</p>' \
            f'<p>Status :{tr.tesseract_call.result["status"]}</p>' \
            '</center>'
