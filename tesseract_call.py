@@ -39,6 +39,7 @@ class tesseract_call:
             count_score += 1
 
         confidence_percentage_list /= count_score
+        confidence_percentage_list = round(confidence_percentage_list, 2)  # float 2 digit
 
         # Remove Image
         # os.remove("image_process.png")
